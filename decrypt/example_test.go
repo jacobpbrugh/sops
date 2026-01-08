@@ -3,7 +3,7 @@ package decrypt
 import (
 	"encoding/json"
 
-	"github.com/getsops/sops/v3/logging"
+	"github.com/jacobpbrugh/sops/v3/logging"
 
 	"github.com/sirupsen/logrus"
 )

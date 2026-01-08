@@ -9,7 +9,7 @@ import (
 	"testing/quick"
 	"time"
 
-	"github.com/getsops/sops/v3"
+	"github.com/jacobpbrugh/sops/v3"
 	"github.com/stretchr/testify/assert"
 )
 

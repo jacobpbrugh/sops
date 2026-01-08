@@ -10,11 +10,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/cmd/sops/codes"
-	"github.com/getsops/sops/v3/cmd/sops/common"
-	"github.com/getsops/sops/v3/keyservice"
-	"github.com/getsops/sops/v3/version"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/codes"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/common"
+	"github.com/jacobpbrugh/sops/v3/keyservice"
+	"github.com/jacobpbrugh/sops/v3/version"
 	"github.com/google/shlex"
 	exec "golang.org/x/sys/execabs"
 )

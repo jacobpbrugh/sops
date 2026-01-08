@@ -3,8 +3,8 @@ package json
 import (
 	"testing"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/config"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/config"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -557,8 +557,8 @@ func TestConflictingAttributes(t *testing.T) {
 
 	data := `
 {
-  "hello": "Sops config file", 
-  "hello": "Doubles are ok", 
+  "hello": "Sops config file",
+  "hello": "Doubles are ok",
   "hello": ["repeatedly"],
   "hello": 3.14
 }

@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/cmd/sops/codes"
-	"github.com/getsops/sops/v3/cmd/sops/common"
-	"github.com/getsops/sops/v3/keyservice"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/codes"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/common"
+	"github.com/jacobpbrugh/sops/v3/keyservice"
 )
 
 type setOpts struct {

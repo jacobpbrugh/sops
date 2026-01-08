@@ -1,4 +1,4 @@
-package dotenv //import "github.com/getsops/sops/v3/stores/dotenv"
+package dotenv //import "github.com/jacobpbrugh/sops/v3/stores/dotenv"
 
 import (
 	"bytes"
@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/config"
-	"github.com/getsops/sops/v3/stores"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/config"
+	"github.com/jacobpbrugh/sops/v3/stores"
 )
 
 // SopsPrefix is the prefix for all metadatada entry keys

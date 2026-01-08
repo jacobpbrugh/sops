@@ -1,0 +1,11 @@
+/Users/jacob/repos/sops/sops/functional-tests/target/debug/deps/getrandom-88f8b7e8fdad4694.d: /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/lib.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/error.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/util.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/../README.md /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/getentropy.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/../util_libc.rs
+
+/Users/jacob/repos/sops/sops/functional-tests/target/debug/deps/libgetrandom-88f8b7e8fdad4694.rmeta: /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/lib.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/error.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/util.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/../README.md /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/getentropy.rs /Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/../util_libc.rs
+
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/lib.rs:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends.rs:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/error.rs:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/util.rs:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/../README.md:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/getentropy.rs:
+/Users/jacob/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.1/src/backends/../util_libc.rs:

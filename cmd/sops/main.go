@@ -1,4 +1,4 @@
-package main // import "github.com/getsops/sops/v3/cmd/sops"
+package main // import "github.com/jacobpbrugh/sops/v3/cmd/sops"
 
 import (
 	"context"
@@ -19,32 +19,32 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/aes"
-	"github.com/getsops/sops/v3/age"
-	_ "github.com/getsops/sops/v3/audit"
-	"github.com/getsops/sops/v3/azkv"
-	"github.com/getsops/sops/v3/cmd/sops/codes"
-	"github.com/getsops/sops/v3/cmd/sops/common"
-	"github.com/getsops/sops/v3/cmd/sops/subcommand/exec"
-	filestatuscmd "github.com/getsops/sops/v3/cmd/sops/subcommand/filestatus"
-	"github.com/getsops/sops/v3/cmd/sops/subcommand/groups"
-	keyservicecmd "github.com/getsops/sops/v3/cmd/sops/subcommand/keyservice"
-	publishcmd "github.com/getsops/sops/v3/cmd/sops/subcommand/publish"
-	"github.com/getsops/sops/v3/cmd/sops/subcommand/updatekeys"
-	"github.com/getsops/sops/v3/config"
-	"github.com/getsops/sops/v3/gcpkms"
-	"github.com/getsops/sops/v3/hckms"
-	"github.com/getsops/sops/v3/hcvault"
-	"github.com/getsops/sops/v3/keys"
-	"github.com/getsops/sops/v3/keyservice"
-	"github.com/getsops/sops/v3/kms"
-	"github.com/getsops/sops/v3/logging"
-	"github.com/getsops/sops/v3/pgp"
-	"github.com/getsops/sops/v3/stores"
-	"github.com/getsops/sops/v3/stores/dotenv"
-	"github.com/getsops/sops/v3/stores/json"
-	"github.com/getsops/sops/v3/version"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/aes"
+	"github.com/jacobpbrugh/sops/v3/age"
+	_ "github.com/jacobpbrugh/sops/v3/audit"
+	"github.com/jacobpbrugh/sops/v3/azkv"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/codes"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/common"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/exec"
+	filestatuscmd "github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/filestatus"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/groups"
+	keyservicecmd "github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/keyservice"
+	publishcmd "github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/publish"
+	"github.com/jacobpbrugh/sops/v3/cmd/sops/subcommand/updatekeys"
+	"github.com/jacobpbrugh/sops/v3/config"
+	"github.com/jacobpbrugh/sops/v3/gcpkms"
+	"github.com/jacobpbrugh/sops/v3/hckms"
+	"github.com/jacobpbrugh/sops/v3/hcvault"
+	"github.com/jacobpbrugh/sops/v3/keys"
+	"github.com/jacobpbrugh/sops/v3/keyservice"
+	"github.com/jacobpbrugh/sops/v3/kms"
+	"github.com/jacobpbrugh/sops/v3/logging"
+	"github.com/jacobpbrugh/sops/v3/pgp"
+	"github.com/jacobpbrugh/sops/v3/stores"
+	"github.com/jacobpbrugh/sops/v3/stores/dotenv"
+	"github.com/jacobpbrugh/sops/v3/stores/json"
+	"github.com/jacobpbrugh/sops/v3/version"
 )
 
 var (
@@ -158,7 +158,7 @@ func main() {
    Note that flags must always be provided before the filename to operate on.
    Otherwise, they will be ignored.
 
-   For more information, see the README at https://github.com/getsops/sops`
+   For more information, see the README at https://github.com/jacobpbrugh/sops`
 	app.EnableBashCompletion = true
 	app.Commands = []cli.Command{
 		{
@@ -1940,7 +1940,7 @@ func main() {
 		}
 
 		// Load configuration here for backwards compatibility (error out in case of bad config files),
-		// but only when not just decrypting (https://github.com/getsops/sops/issues/868)
+		// but only when not just decrypting (https://github.com/jacobpbrugh/sops/issues/868)
 		needsCreationRule := isEncryptMode || isRotateMode || isSetMode || isEditMode
 		var config *config.Config
 		if needsCreationRule {

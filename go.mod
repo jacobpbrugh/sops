@@ -1,4 +1,4 @@
-module github.com/getsops/sops/v3
+module github.com/jacobpbrugh/sops/v3
 
 go 1.24.0
 

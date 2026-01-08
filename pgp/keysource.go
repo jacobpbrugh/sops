@@ -1,10 +1,10 @@
 /*
-Package pgp contains an implementation of the github.com/getsops/sops/v3.MasterKey
+Package pgp contains an implementation of the github.com/jacobpbrugh/sops/v3.MasterKey
 interface that encrypts and decrypts the data key by first trying with the
 github.com/ProtonMail/go-crypto/openpgp package and if that fails, by calling
 the "gpg" binary.
 */
-package pgp // import "github.com/getsops/sops/v3/pgp"
+package pgp // import "github.com/jacobpbrugh/sops/v3/pgp"
 
 import (
 	"bytes"
@@ -26,7 +26,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"golang.org/x/term"
 
-	"github.com/getsops/sops/v3/logging"
+	"github.com/jacobpbrugh/sops/v3/logging"
 )
 
 const (
@@ -462,7 +462,7 @@ func (key *MasterKey) decryptWithGnuPG(ctx context.Context) ([]byte, error) {
 		// Apparently some GnuPG versions drop the unspuported packets, which results in a decrypted
 		// data of 0 bytes, and returns nothing with exit code 0.
 		//
-		// (See https://github.com/getsops/sops/issues/896#issuecomment-2688079300 for more infos.)
+		// (See https://github.com/jacobpbrugh/sops/issues/896#issuecomment-2688079300 for more infos.)
 		return nil, fmt.Errorf("failed to decrypt sops data key with pgp: zero bytes returned")
 	}
 	return result, nil
@@ -673,7 +673,7 @@ func gnuPGHome(customPath string) string {
 func shortenFingerprint(fingerprint string) string {
 	offset := len(fingerprint) - 16
 	// If the fingerprint ends with '!', we must include '!' in the ID *and* the
-	// 16 hex digits before it. See https://github.com/getsops/sops/issues/1365.
+	// 16 hex digits before it. See https://github.com/jacobpbrugh/sops/issues/1365.
 	if strings.HasSuffix(fingerprint, "!") {
 		offset -= 1
 	}

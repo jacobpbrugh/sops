@@ -1,4 +1,4 @@
-package json //import "github.com/getsops/sops/v3/stores/json"
+package json //import "github.com/jacobpbrugh/sops/v3/stores/json"
 
 import (
 	"bytes"
@@ -8,9 +8,9 @@ import (
 	"io"
 	"strings"
 
-	"github.com/getsops/sops/v3"
-	"github.com/getsops/sops/v3/config"
-	"github.com/getsops/sops/v3/stores"
+	"github.com/jacobpbrugh/sops/v3"
+	"github.com/jacobpbrugh/sops/v3/config"
+	"github.com/jacobpbrugh/sops/v3/stores"
 )
 
 // Store handles storage of JSON data.

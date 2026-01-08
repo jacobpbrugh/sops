@@ -6,7 +6,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/getsops/sops/v3/keys"
+	"github.com/jacobpbrugh/sops/v3/keys"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -894,7 +894,7 @@ destination_rules:
 
 // TestKeyGroupsForFileWithExternalEncryptionContext tests that when kmsEncryptionContext
 // is passed to parseCreationRuleForFile, the resulting KMS keys have the encryption context set.
-// This is a regression test for https://github.com/getsops/sops/issues/1972
+// This is a regression test for https://github.com/jacobpbrugh/sops/issues/1972
 func TestKeyGroupsForFileWithExternalEncryptionContext(t *testing.T) {
 	// Config with flat KMS format (not key_groups) - this is where external context applies
 	var sampleConfigWithFlatKMS = []byte(`

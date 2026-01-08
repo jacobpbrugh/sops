@@ -9,15 +9,15 @@ formats and encrypts with AWS KMS, GCP KMS, Azure Key Vault, HuaweiCloud KMS, ag
 
 ------------
 
-.. image:: https://pkg.go.dev/badge/github.com/getsops/sops/v3.svg
-    :target: https://pkg.go.dev/github.com/getsops/sops/v3
+.. image:: https://pkg.go.dev/badge/github.com/jacobpbrugh/sops/v3.svg
+    :target: https://pkg.go.dev/github.com/jacobpbrugh/sops/v3
 
 Download
 --------
 
 Stable release
 ~~~~~~~~~~~~~~
-Binaries and packages of the latest stable release are available at `https://github.com/getsops/sops/releases <https://github.com/getsops/sops/releases>`_.
+Binaries and packages of the latest stable release are available at `https://github.com/jacobpbrugh/sops/releases <https://github.com/jacobpbrugh/sops/releases>`_.
 
 Development branch
 ~~~~~~~~~~~~~~~~~~
@@ -25,9 +25,9 @@ For the adventurous, unstable features are available in the `main` branch, which
 
 .. code:: bash
 
-    $ mkdir -p $GOPATH/src/github.com/getsops/sops/
-    $ git clone https://github.com/getsops/sops.git $GOPATH/src/github.com/getsops/sops/
-    $ cd $GOPATH/src/github.com/getsops/sops/
+    $ mkdir -p $GOPATH/src/github.com/jacobpbrugh/sops/
+    $ git clone https://github.com/jacobpbrugh/sops.git $GOPATH/src/github.com/jacobpbrugh/sops/
+    $ cd $GOPATH/src/github.com/jacobpbrugh/sops/
     $ make install
 
 (requires Go >= 1.19)
@@ -43,7 +43,7 @@ If you don't have Go installed, set it up with:
 
 Or whatever variation of the above fits your system and shell.
 
-To use **SOPS** as a library, take a look at the `decrypt package <https://pkg.go.dev/github.com/getsops/sops/v3/decrypt>`_.
+To use **SOPS** as a library, take a look at the `decrypt package <https://pkg.go.dev/github.com/jacobpbrugh/sops/v3/decrypt>`_.
 
 .. sectnum::
 .. contents:: Table of Contents
@@ -111,7 +111,7 @@ not set, in vim, nano, or vi.
 Keep in mind that SOPS will wait for the editor to exit, and then try to reencrypt
 the file. Some GUI editors (atom, sublime) spawn a child process and then exit
 immediately. They usually have an option to wait for the main editor window to be
-closed before exiting. See `#127 <https://github.com/getsops/sops/issues/127>`_ for
+closed before exiting. See `#127 <https://github.com/jacobpbrugh/sops/issues/127>`_ for
 more information.
 
 The resulting encrypted file looks like this:
@@ -182,7 +182,7 @@ Test with the dev PGP key
 If you want to test **SOPS** without having to do a bunch of setup, you can use
 the example files and pgp key provided with the repository::
 
-    $ git clone https://github.com/getsops/sops.git
+    $ git clone https://github.com/jacobpbrugh/sops.git
     $ cd sops
     $ gpg --import pgp/sops_functional_tests_key.asc
     $ sops edit example.yaml
@@ -221,7 +221,7 @@ the ``--age`` option or the **SOPS_AGE_RECIPIENTS** environment variable:
 
 When decrypting a file with the corresponding identity, SOPS will look for a
 text file name ``keys.txt`` located in a ``sops`` subdirectory of your user
-configuration directory. 
+configuration directory.
 
 - **Linux**
 
@@ -276,7 +276,7 @@ It is also possible to use ``updatekeys``, when adding or removing age recipient
   +++ age1qe5lxzzeppw5k79vxn3872272sgy224g2nzqlzy3uljs84say3yqgvd0sw
   Is this okay? (y/n):y
   2022/02/09 16:32:04 File /iac/solution1/secret.enc.yaml synced with new keys
-  
+
 Encrypting using GCP KMS
 ~~~~~~~~~~~~~~~~~~~~~~~~
 GCP KMS has support for authorization with the use of `Application Default Credentials
@@ -300,7 +300,7 @@ you can enable application default credentials using the sdk:
 Using OAauth tokens you can authorize by doing this:
 
 .. code:: sh
-    
+
     $ export GOOGLE_OAUTH_ACCESS_TOKEN=<your access token>
 
 Or if you are logged in you can authorize by generating an access token:
@@ -477,7 +477,7 @@ Encrypting using Hashicorp Vault
 
 We assume you have an instance (or more) of Vault running and you have privileged access to it. For instructions on how to deploy a secure instance of Vault, refer to Hashicorp's official documentation.
 
-To easily deploy Vault locally: (DO NOT DO THIS FOR PRODUCTION!!!) 
+To easily deploy Vault locally: (DO NOT DO THIS FOR PRODUCTION!!!)
 
 .. code:: sh
 
@@ -487,11 +487,11 @@ To easily deploy Vault locally: (DO NOT DO THIS FOR PRODUCTION!!!)
 .. code:: sh
 
     $ # Substitute this with the address Vault is running on
-    $ export VAULT_ADDR=http://127.0.0.1:8200 
+    $ export VAULT_ADDR=http://127.0.0.1:8200
 
     $ # this may not be necessary in case you previously used `vault login` for production use
-    $ export VAULT_TOKEN=toor 
-    
+    $ export VAULT_TOKEN=toor
+
     $ # to check if Vault started and is configured correctly
     $ vault status
     Key             Value
@@ -882,7 +882,7 @@ found, the filename of the file being created is compared with the filename
 regexes of the configuration file. The first regex that matches is selected,
 and its KMS and PGP keys are used to encrypt the file. It should be noted that
 the looking up of ``.sops.yaml`` is from the working directory (CWD) instead of
-the directory of the encrypting file (see `Issue 242 <https://github.com/getsops/sops/issues/242>`_).
+the directory of the encrypting file (see `Issue 242 <https://github.com/jacobpbrugh/sops/issues/242>`_).
 
 The ``path_regex`` checks the path of the encrypting file relative to the ``.sops.yaml`` config file. Here is another example:
 
@@ -1509,7 +1509,7 @@ But this one will work just fine:
 Examples
 --------
 
-Take a look into the `examples folder <https://github.com/getsops/sops/tree/main/examples>`_ for detailed use cases of SOPS in a CI environment. The section below describes specific tips for common use cases.
+Take a look into the `examples folder <https://github.com/jacobpbrugh/sops/tree/main/examples>`_ for detailed use cases of SOPS in a CI environment. The section below describes specific tips for common use cases.
 
 Creating a new file
 ~~~~~~~~~~~~~~~~~~~
@@ -1733,8 +1733,8 @@ will encrypt the values under the ``data`` and ``stringData`` keys in a YAML fil
 containing kubernetes secrets.  It will not encrypt other values that help you to
 navigate the file, like ``metadata`` which contains the secrets' names.
 
-Conversely, you can opt in to only leave certain keys without encrypting by using the 
-``--unencrypted-regex`` option, which will leave the values unencrypted of those keys 
+Conversely, you can opt in to only leave certain keys without encrypting by using the
+``--unencrypted-regex`` option, which will leave the values unencrypted of those keys
 that match the supplied regular expression. For example, this command:
 
 .. code:: sh
@@ -2333,7 +2333,7 @@ file format introduced in **1.0**.
 Security
 --------
 
-Please report any security issues privately using `GitHub's advisory form <https://github.com/getsops/sops/security/advisories>`_.
+Please report any security issues privately using `GitHub's advisory form <https://github.com/jacobpbrugh/sops/security/advisories>`_.
 
 License
 -------
@@ -2344,7 +2344,7 @@ Authors
 
 SOPS was initially launched as a project at Mozilla in 2015 and has been
 graciously donated to the CNCF as a Sandbox project in 2023, now under the
-stewardship of a `new group of maintainers <https://github.com/getsops/community/blob/main/MAINTAINERS.md>`_.
+stewardship of a `new group of maintainers <https://github.com/jacobpbrugh/community/blob/main/MAINTAINERS.md>`_.
 
 The original authors of the project were:
 
@@ -2352,7 +2352,7 @@ The original authors of the project were:
 * Julien Vehent @jvehent
 
 Furthermore, the project has been carried for a long time by AJ Bahnken @ajvb,
-and had not been possible without the contributions of numerous `contributors <https://github.com/getsops/sops/graphs/contributors>`_.
+and had not been possible without the contributions of numerous `contributors <https://github.com/jacobpbrugh/sops/graphs/contributors>`_.
 
 Credits
 -------

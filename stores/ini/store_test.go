@@ -3,7 +3,7 @@ package ini
 import (
 	"testing"
 
-	"github.com/getsops/sops/v3"
+	"github.com/jacobpbrugh/sops/v3"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -16,7 +16,7 @@ organization=Acme Widgets Inc.
 
 [database]
 ; use IP address in case network name resolution is not working
-server=192.0.2.62     
+server=192.0.2.62
 port=143
 file="payroll.dat"
 `

@@ -18,7 +18,7 @@ import (
 	"filippo.io/age/plugin"
 	"github.com/sirupsen/logrus"
 
-	"github.com/getsops/sops/v3/logging"
+	"github.com/jacobpbrugh/sops/v3/logging"
 	"github.com/google/shlex"
 )
 
@@ -427,6 +427,19 @@ func (key *MasterKey) loadIdentities() (ParsedIdentities, []string, errSet) {
 // key or a public ssh key.
 func parseRecipient(recipient string) (age.Recipient, error) {
 	switch {
+	case strings.HasPrefix(recipient, "age1pq1") && strings.Count(recipient, "1") > 2:
+		parsedRecipient, err := plugin.NewRecipient(recipient, pluginTerminalUI)
+		if err != nil {
+			return nil, fmt.Errorf("failed to parse input as age key from age plugin: %w", err)
+		}
+		return parsedRecipient, nil
+	case strings.HasPrefix(recipient, "age1pq1"):
+		parsedRecipient, err := age.ParseHybridRecipient(recipient)
+		if err != nil {
+			return nil, fmt.Errorf("failed to parse input as Bech32-encoded age public key: %w", err)
+		}
+
+		return parsedRecipient, nil
 	case strings.HasPrefix(recipient, "age1") && strings.Count(recipient, "1") > 1:
 		parsedRecipient, err := plugin.NewRecipient(recipient, pluginTerminalUI)
 		if err != nil {
@@ -481,6 +494,8 @@ func parseIdentity(s string) (age.Identity, error) {
 	switch {
 	case strings.HasPrefix(s, "AGE-PLUGIN-"):
 		return plugin.NewIdentity(s, pluginTerminalUI)
+	case strings.HasPrefix(s, "AGE-SECRET-KEY-PQ-1"):
+		return age.ParseHybridIdentity(s)
 	case strings.HasPrefix(s, "AGE-SECRET-KEY-1"):
 		return age.ParseX25519Identity(s)
 	default:
